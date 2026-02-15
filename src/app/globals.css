@@ -701,12 +701,15 @@ ol {
   font-weight: 700;
   color: var(--primary);
   line-height: 1;
+  font-variant-numeric: tabular-nums;
+  min-height: 2rem;
 }
 
 .about-stat-label {
   font-size: 0.8rem;
   color: var(--text-secondary);
   margin-top: 0.25rem;
+  white-space: nowrap;
 }
 
 @media (max-width: 768px) {
@@ -717,6 +720,20 @@ ol {
 
   .about-stats {
     grid-template-columns: repeat(3, 1fr);
+    gap: 0.5rem;
+  }
+
+  .about-stat {
+    padding: 0.75rem 0.5rem;
+  }
+
+  .about-stat-number {
+    font-size: 1.3rem;
+    min-height: 1.5rem;
+  }
+
+  .about-stat-label {
+    font-size: 0.65rem;
   }
 }
 
