@@ -12,9 +12,13 @@ export default function About() {
     const { t, lang } = useLanguage();
     const statsRef = useRef<HTMLDivElement>(null);
 
-    // Counter animation — re-runs on language change
+    // Counter animation — re-runs on language change, disabled on mobile
     useEffect(() => {
         if (!statsRef.current) return;
+
+        // On mobile, just show the final values — no animation
+        const isMobile = window.innerWidth < 768;
+        if (isMobile) return;
 
         const els = statsRef.current.querySelectorAll<HTMLElement>(".about-stat-number");
         const animations: gsap.core.Tween[] = [];
