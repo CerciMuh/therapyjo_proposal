@@ -1,8 +1,11 @@
 "use client";
 
-import React, { useRef, useState, useEffect, useCallback } from "react";
+import React, { useRef, useEffect, useState } from "react";
 import { useLanguage } from "../i18n/LanguageContext";
-import { ChevronLeft, ChevronRight } from "lucide-react";
+import gsap from "gsap";
+import { ScrollTrigger } from "gsap/ScrollTrigger";
+
+gsap.registerPlugin(ScrollTrigger);
 
 /* Map service titles → icon file paths */
 const iconMap: Record<string, string> = {
@@ -28,122 +31,116 @@ const iconMap: Record<string, string> = {
 
 export default function Services() {
     const { t, lang } = useLanguage();
-    const trackRef = useRef<HTMLDivElement>(null);
-    const [progress, setProgress] = useState(0);
-    const [canScrollLeft, setCanScrollLeft] = useState(false);
-    const [canScrollRight, setCanScrollRight] = useState(true);
+    const sectionRef = useRef<HTMLElement>(null);
+    const [activeSlide, setActiveSlide] = useState(0);
 
-    const updateScrollState = useCallback(() => {
-        const track = trackRef.current;
-        if (!track) return;
-        const maxScroll = track.scrollWidth - track.clientWidth;
-        if (maxScroll <= 0) {
-            setProgress(0);
-            setCanScrollLeft(false);
-            setCanScrollRight(false);
-            return;
-        }
-        const scrollPos = Math.abs(track.scrollLeft);
-        const pct = scrollPos / maxScroll;
-        setProgress(pct);
-        setCanScrollLeft(scrollPos > 4);
-        setCanScrollRight(scrollPos < maxScroll - 4);
-    }, []);
+    const items = t.services.items;
+
+    // Pair items into slides of 2
+    const slides: typeof items[] = [];
+    for (let i = 0; i < items.length; i += 2) {
+        slides.push(items.slice(i, i + 2));
+    }
+
+    const totalSlides = slides.length;
 
     useEffect(() => {
-        const track = trackRef.current;
-        if (!track) return;
-        track.scrollLeft = 0;
-        const onScroll = () => updateScrollState();
-        track.addEventListener("scroll", onScroll, { passive: true });
-        requestAnimationFrame(() => updateScrollState());
-        return () => track.removeEventListener("scroll", onScroll);
-    }, [updateScrollState, lang]);
+        const section = sectionRef.current;
+        if (!section) return;
 
-    const scroll = (dir: "left" | "right") => {
-        const track = trackRef.current;
-        if (!track) return;
-        const cardEl = track.querySelector<HTMLElement>(".service-card");
-        if (!cardEl) return;
-        const scrollAmount = cardEl.offsetWidth + 24;
+        const ctx = gsap.context(() => {
+            ScrollTrigger.create({
+                trigger: section,
+                start: "top top",
+                end: () => `+=${totalSlides * 150}vh`,
+                pin: true,
+                scrub: 0.3,
+                anticipatePin: 1,
+                onUpdate: (self) => {
+                    const idx = Math.min(
+                        Math.floor(self.progress * totalSlides),
+                        totalSlides - 1
+                    );
+                    setActiveSlide(idx);
+                },
+            });
+        }, section);
 
-        const isRtl = document.dir === "rtl" || document.documentElement.dir === "rtl";
-        let delta: number;
-        if (dir === "right") {
-            delta = isRtl ? -scrollAmount : scrollAmount;
-        } else {
-            delta = isRtl ? scrollAmount : -scrollAmount;
-        }
-        track.scrollBy({ left: delta, behavior: "smooth" });
-    };
+        return () => ctx.revert();
+    }, [totalSlides, lang]);
 
     const learnMoreLabel = lang === "ar" ? "اعرف المزيد" : "Learn More";
 
     return (
-        <section id="services" className="services section-padding">
+        <section id="services" className="svc" ref={sectionRef}>
             <div className="container">
-                <div className="services-header gsap-reveal">
+                <div className="svc-header">
                     <h2 className="section-title">{t.services.title}</h2>
                 </div>
 
-                <div className="carousel-wrapper">
-                    <button
-                        className={`carousel-arrow carousel-arrow-prev ${!canScrollLeft ? "disabled" : ""}`}
-                        onClick={() => scroll("left")}
-                        aria-label="Previous"
-                        type="button"
-                    >
-                        <ChevronLeft size={22} />
-                    </button>
-
-                    <div className="carousel-track" ref={trackRef}>
-                        {t.services.items.map((service) => (
-                            <a
-                                key={service.title}
-                                href="https://wa.me/962799819669"
-                                target="_blank"
-                                rel="noopener noreferrer"
-                                className="service-card"
-                            >
-                                <div className="service-card-icon-area">
-                                    {/* eslint-disable-next-line @next/next/no-img-element */}
-                                    <img
-                                        src={iconMap[service.title] || "/icons/cold-laser.png"}
-                                        alt=""
-                                        width={96}
-                                        height={96}
-                                        className="service-icon-img"
-                                    />
-                                </div>
-                                <div className="service-card-body">
-                                    <h3 className="service-card-title">{service.title}</h3>
-                                    <p className="service-card-desc">{service.description}</p>
-                                    <span className="service-card-link">
-                                        {learnMoreLabel}
-                                        <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
-                                            <line x1="7" y1="17" x2="17" y2="7" /><polyline points="7 7 17 7 17 17" />
-                                        </svg>
-                                    </span>
-                                </div>
-                            </a>
-                        ))}
-                    </div>
-
-                    <button
-                        className={`carousel-arrow carousel-arrow-next ${!canScrollRight ? "disabled" : ""}`}
-                        onClick={() => scroll("right")}
-                        aria-label="Next"
-                        type="button"
-                    >
-                        <ChevronRight size={22} />
-                    </button>
+                {/* Counter */}
+                <div className="svc-counter">
+                    <span className="svc-counter-num">{String(activeSlide + 1).padStart(2, "0")}</span>
+                    <span className="svc-counter-sep">/</span>
+                    <span className="svc-counter-total">{String(totalSlides).padStart(2, "0")}</span>
                 </div>
 
-                <div className="carousel-progress-track">
-                    <div
-                        className="carousel-progress-fill"
-                        style={{ width: `${Math.max(12, progress * 100)}%` }}
-                    />
+                {/* Slides */}
+                <div className="svc-slides">
+                    {slides.map((pair, slideIdx) => (
+                        <div
+                            key={slideIdx}
+                            className={`svc-slide ${slideIdx === activeSlide
+                                ? "active"
+                                : slideIdx < activeSlide
+                                    ? "exited"
+                                    : "waiting"
+                                }`}
+                        >
+                            {pair.map((service, rowIdx) => {
+                                // Alternate: even slide+row = icon-left, odd = icon-right
+                                const iconRight = (slideIdx + rowIdx) % 2 !== 0;
+
+                                return (
+                                    <a
+                                        key={service.title}
+                                        href="https://wa.me/962799819669"
+                                        target="_blank"
+                                        rel="noopener noreferrer"
+                                        className={`svc-row ${iconRight ? "svc-row-reverse" : ""}`}
+                                    >
+                                        <div className="svc-row-icon">
+                                            {/* eslint-disable-next-line @next/next/no-img-element */}
+                                            <img
+                                                src={iconMap[service.title] || "/icons/cold-laser.png"}
+                                                alt=""
+                                                width={100}
+                                                height={100}
+                                            />
+                                        </div>
+                                        <div className="svc-row-content">
+                                            <h3 className="svc-row-title">{service.title}</h3>
+                                            <p className="svc-row-desc">{service.description}</p>
+                                            <span className="svc-row-link">
+                                                {learnMoreLabel}
+                                                <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+                                                    <line x1="7" y1="17" x2="17" y2="7" />
+                                                    <polyline points="7 7 17 7 17 17" />
+                                                </svg>
+                                            </span>
+                                        </div>
+                                    </a>
+                                );
+                            })}
+                        </div>
+                    ))}
+                </div>
+
+                {/* Progress dots */}
+                <div className="svc-dots">
+                    {slides.map((_, i) => (
+                        <span key={i} className={`svc-dot ${i === activeSlide ? "active" : ""}`} />
+                    ))}
                 </div>
             </div>
         </section>
