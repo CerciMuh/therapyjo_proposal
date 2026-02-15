@@ -1,0 +1,22 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 80 80" fill="none">
+  <!-- Running person -->
+  <!-- Head -->
+  <circle cx="44" cy="14" r="6" fill="#4CAF93"/>
+  <!-- Body -->
+  <path d="M44 20 L42 36" stroke="#4CAF93" stroke-width="3" stroke-linecap="round"/>
+  <!-- Arms -->
+  <path d="M34 24 L42 28 L52 22" stroke="#4CAF93" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" fill="none"/>
+  <!-- Front leg (extended) -->
+  <path d="M42 36 L54 48 L58 62" stroke="#4CAF93" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" fill="none"/>
+  <!-- Back leg (bent) -->
+  <path d="M42 36 L30 46 L26 60" stroke="#4CAF93" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" fill="none"/>
+  <!-- Motion lines -->
+  <line x1="18" y1="20" x2="26" y2="20" stroke="#4CAF93" stroke-width="2" stroke-linecap="round" opacity="0.4"/>
+  <line x1="16" y1="28" x2="24" y2="28" stroke="#4CAF93" stroke-width="2" stroke-linecap="round" opacity="0.3"/>
+  <line x1="18" y1="36" x2="24" y2="36" stroke="#4CAF93" stroke-width="2" stroke-linecap="round" opacity="0.2"/>
+  <!-- Ground -->
+  <line x1="20" y1="68" x2="64" y2="68" stroke="#4CAF93" stroke-width="2" stroke-linecap="round" opacity="0.2"/>
+  <!-- Plus/health symbol -->
+  <rect x="58" y="30" width="12" height="3" rx="1.5" fill="#4CAF93" opacity="0.5"/>
+  <rect x="62.5" y="25.5" width="3" height="12" rx="1.5" fill="#4CAF93" opacity="0.5"/>
+</svg>

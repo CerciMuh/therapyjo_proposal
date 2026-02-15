@@ -1,0 +1,14 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 80 80" fill="none">
+  <!-- Device handle -->
+  <rect x="30" y="42" width="12" height="26" rx="5" fill="#4CAF93"/>
+  <!-- Device head -->
+  <circle cx="36" cy="36" r="14" fill="#4CAF93" opacity="0.2"/>
+  <circle cx="36" cy="36" r="10" fill="#3D9B83"/>
+  <circle cx="36" cy="36" r="5" fill="#4CAF93"/>
+  <!-- RF waves emanating -->
+  <path d="M52 28a12 12 0 0 1 0 16" stroke="#4CAF93" stroke-width="2.5" stroke-linecap="round"/>
+  <path d="M58 22a20 20 0 0 1 0 28" stroke="#4CAF93" stroke-width="2" stroke-linecap="round" opacity="0.6"/>
+  <path d="M64 16a28 28 0 0 1 0 40" stroke="#4CAF93" stroke-width="1.5" stroke-linecap="round" opacity="0.3"/>
+  <!-- Heat dots -->
+  <circle cx="36" cy="36" r="2" fill="white" opacity="0.5"/>
+</svg>

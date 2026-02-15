@@ -1,0 +1,16 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 80 80" fill="none">
+  <!-- Pelvis shape -->
+  <path d="M20 30 Q28 22 40 20 Q52 22 60 30 L58 50 Q50 56 40 58 Q30 56 22 50 Z" fill="#4CAF93" opacity="0.15"/>
+  <path d="M20 30 Q28 22 40 20 Q52 22 60 30 L58 50 Q50 56 40 58 Q30 56 22 50 Z" stroke="#4CAF93" stroke-width="2.5" stroke-linejoin="round"/>
+  <!-- Inner structure -->
+  <path d="M30 32 Q35 28 40 27 Q45 28 50 32" stroke="#4CAF93" stroke-width="2" stroke-linecap="round" fill="none"/>
+  <path d="M32 42 Q36 38 40 37 Q44 38 48 42" stroke="#3D9B83" stroke-width="2" stroke-linecap="round" fill="none"/>
+  <!-- Strengthening arrows -->
+  <path d="M16 40 L22 40" stroke="#4CAF93" stroke-width="2" stroke-linecap="round"/>
+  <polyline points="20,37 22,40 20,43" stroke="#4CAF93" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+  <path d="M58 40 L64 40" stroke="#4CAF93" stroke-width="2" stroke-linecap="round"/>
+  <polyline points="60,37 58,40 60,43" stroke="#4CAF93" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+  <!-- Core muscle lines -->
+  <circle cx="40" cy="40" r="4" fill="#4CAF93" opacity="0.3"/>
+  <circle cx="40" cy="40" r="2" fill="#4CAF93"/>
+</svg>

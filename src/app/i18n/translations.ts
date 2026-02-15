@@ -3,7 +3,7 @@ export const translations = {
         nav: {
             about: "About",
             services: "Services",
-            staff: "Our Team",
+            staff: "Our Expert",
             location: "Location",
             contact: "Contact",
             bookNow: "Book Now",
@@ -14,7 +14,7 @@ export const translations = {
             titleHighlight: "Recovery",
             titleEnd: "Starts Here",
             subtitle:
-                "Professional physiotherapy treatments in Amman, Jordan. Expert care through Manipulation, Cupping Therapy, Hawkgrips, Theragun & more.",
+                "Professional physiotherapy treatments in Amman, Jordan. Expert care through advanced technology, manual therapy, and rehabilitation programs.",
             bookSession: "Book a Session",
             callUs: "Call Us",
             scroll: "Scroll",
@@ -28,9 +28,9 @@ export const translations = {
                 "From sports injuries to chronic pain management, we are dedicated to helping you move better, feel better, and live better.",
             stat1Number: "500+",
             stat1Label: "Happy Patients",
-            stat2Number: "5+",
+            stat2Number: "10+",
             stat2Label: "Years Experience",
-            stat3Number: "5",
+            stat3Number: "9",
             stat3Label: "Specializations",
         },
         services: {
@@ -40,31 +40,66 @@ export const translations = {
                 "A complete range of professional physiotherapy treatments designed to help you heal, recover, and thrive.",
             items: [
                 {
-                    title: "Manipulation",
+                    title: "Cold Laser Therapy",
                     description:
-                        "Joint mobilization and spinal manipulation techniques to restore range of motion, reduce pain, and improve function. Our skilled therapists use precise, controlled movements tailored to your condition.",
+                        "Non-invasive light therapy to reduce pain and inflammation, accelerating tissue repair at the cellular level.",
+                    category: "technology",
                 },
                 {
-                    title: "Cupping Therapy",
+                    title: "Radio Frequency Therapy",
                     description:
-                        "Traditional cupping therapy combined with modern techniques to relieve muscle tension, improve blood flow, and accelerate healing. Effective for back pain, neck pain, and muscle stiffness.",
+                        "Targeted heat therapy to improve circulation and promote tissue healing for deep pain relief.",
+                    category: "technology",
                 },
                 {
-                    title: "Hawkgrips",
+                    title: "Pelvic Floor Rehabilitation",
                     description:
-                        "Instrument-assisted soft tissue mobilization using precision Hawkgrips tools. Breaks down scar tissue and fascial restrictions for enhanced mobility and pain relief.",
+                        "Specialized rehabilitation programs to strengthen and restore pelvic floor muscle function.",
+                    category: "rehabilitation",
                 },
                 {
-                    title: "Theragun",
+                    title: "Electromagnetic Pelvic Floor",
                     description:
-                        "Percussive therapy using the Theragun device to target deep muscle tissue. Ideal for reducing soreness, improving circulation, and speeding up recovery after sports or injury.",
+                        "Advanced electromagnetic stimulation technology for non-invasive pelvic floor muscle strengthening.",
+                    category: "technology",
                 },
                 {
-                    title: "Consultations",
+                    title: "Traction Therapy",
                     description:
-                        "Comprehensive initial assessment and personalized treatment planning. Our experienced physiotherapists evaluate your condition, discuss your goals, and create a tailored recovery roadmap.",
+                        "Spinal decompression traction for treating disc herniation, relieving nerve pressure and back pain.",
+                    category: "manual",
+                },
+                {
+                    title: "Sport Rehabilitation",
+                    description:
+                        "Comprehensive sport-specific recovery programs to get athletes back to peak performance safely.",
+                    category: "rehabilitation",
+                },
+                {
+                    title: "Post-Op Rehabilitation",
+                    description:
+                        "Tailored exercise programs to aid recovery after surgery, restoring strength and mobility.",
+                    category: "rehabilitation",
+                },
+                {
+                    title: "Pediatric Physical Therapy",
+                    description:
+                        "Gentle, specialized therapy for children to support developmental milestones and movement disorders.",
+                    category: "rehabilitation",
+                },
+                {
+                    title: "Dry Needling & Acupuncture",
+                    description:
+                        "Precise needling techniques to release muscle tension, trigger points, and promote natural recovery.",
+                    category: "manual",
                 },
             ],
+            categories: {
+                all: "All",
+                technology: "Technology",
+                manual: "Manual Therapy",
+                rehabilitation: "Rehabilitation",
+            },
         },
         location: {
             label: "Find Us",
@@ -75,10 +110,12 @@ export const translations = {
             addressText: "Az-Zubayr Ben Al-Awwam St., Amman, Jordan",
             contactTitle: "Contact",
             hoursTitle: "Working Hours",
-            weekdays: "Saturday – Thursday",
-            weekdaysTime: "9:00 AM – 8:00 PM",
+            weekdays: "Saturday – Wednesday",
+            weekdaysTime: "10:00 AM – 7:00 PM",
+            thursday: "Thursday",
+            thursdayTime: "10:00 AM – 3:00 PM",
             friday: "Friday",
-            fridayClosed: "Closed",
+            fridayTime: "10:00 AM – 7:00 PM",
         },
         contact: {
             label: "Get in Touch",
@@ -89,9 +126,9 @@ export const translations = {
             call: "Call Now",
         },
         staff: {
-            label: "Our Team",
-            title: "Meet Our Experts",
-            subtitle: "Our dedicated team of certified professionals is here to guide you through your recovery journey.",
+            label: "Our Expert",
+            title: "Meet Our Head Specialist",
+            subtitle: "Led by a certified professional dedicated to guiding you through your recovery journey.",
         },
         footer: {
             description:
@@ -109,7 +146,7 @@ export const translations = {
         nav: {
             about: "من نحن",
             services: "خدماتنا",
-            staff: "فريقنا",
+            staff: "خبيرنا",
             location: "الموقع",
             contact: "تواصل معنا",
             bookNow: "احجز الآن",
@@ -120,7 +157,7 @@ export const translations = {
             titleHighlight: "التعافي",
             titleEnd: "يبدأ هنا",
             subtitle:
-                "خدمات العلاج الطبيعي المتخصصة في عمّان، الأردن. رعاية متميزة من خلال التقويم اليدوي، الحجامة، هوكغريبس، ثيراغن والمزيد.",
+                "خدمات العلاج الطبيعي المتخصصة في عمّان، الأردن. رعاية متميزة من خلال التكنولوجيا المتقدمة والعلاج اليدوي وبرامج التأهيل.",
             bookSession: "احجز جلسة",
             callUs: "اتصل بنا",
             scroll: "مرر",
@@ -134,9 +171,9 @@ export const translations = {
                 "من الإصابات الرياضية إلى إدارة الألم المزمن، نحن ملتزمون بمساعدتك على التحرك بشكل أفضل والشعور بشكل أفضل والعيش بشكل أفضل.",
             stat1Number: "500+",
             stat1Label: "مريض سعيد",
-            stat2Number: "5+",
+            stat2Number: "10+",
             stat2Label: "سنوات خبرة",
-            stat3Number: "5",
+            stat3Number: "9",
             stat3Label: "تخصصات",
         },
         services: {
@@ -146,31 +183,66 @@ export const translations = {
                 "مجموعة كاملة من العلاجات الطبيعية المتخصصة المصممة لمساعدتك على الشفاء والتعافي والازدهار.",
             items: [
                 {
-                    title: "التقويم اليدوي",
+                    title: "العلاج بالليزر البارد",
                     description:
-                        "تقنيات تحريك المفاصل والتقويم اليدوي للعمود الفقري لاستعادة نطاق الحركة وتقليل الألم وتحسين الوظيفة. يستخدم معالجونا المهرة حركات دقيقة ومضبوطة مصممة خصيصاً لحالتك.",
+                        "علاج ضوئي غير جراحي لتقليل الألم والالتهاب وتسريع إصلاح الأنسجة على المستوى الخلوي.",
+                    category: "technology",
                 },
                 {
-                    title: "الحجامة",
+                    title: "العلاج بالترددات الراديوية",
                     description:
-                        "الحجامة التقليدية مع التقنيات الحديثة لتخفيف توتر العضلات وتحسين تدفق الدم وتسريع الشفاء. فعّالة لآلام الظهر والرقبة وتيبس العضلات.",
+                        "علاج حراري موجّه لتحسين الدورة الدموية وتعزيز شفاء الأنسجة لتخفيف الألم العميق.",
+                    category: "technology",
                 },
                 {
-                    title: "هوكغريبس",
+                    title: "تأهيل عضلات الحوض",
                     description:
-                        "تحريك الأنسجة الرخوة بمساعدة أدوات هوكغريبس الدقيقة. يعمل على تفكيك الأنسجة الندبية والقيود اللفافية لتحسين الحركة وتخفيف الألم.",
+                        "برامج تأهيل متخصصة لتقوية واستعادة وظائف عضلات قاع الحوض.",
+                    category: "rehabilitation",
                 },
                 {
-                    title: "ثيراغن",
+                    title: "الكهرومغناطيسي لعضلات الحوض",
                     description:
-                        "العلاج بالنبض باستخدام جهاز ثيراغن لاستهداف أنسجة العضلات العميقة. مثالي لتقليل الألم وتحسين الدورة الدموية وتسريع التعافي بعد الرياضة أو الإصابة.",
+                        "تقنية تحفيز كهرومغناطيسي متقدمة لتقوية عضلات قاع الحوض بدون تدخل جراحي.",
+                    category: "technology",
                 },
                 {
-                    title: "الاستشارات",
+                    title: "علاج الشد (الجر)",
                     description:
-                        "تقييم أولي شامل وتخطيط علاجي مخصص. يقيّم أخصائيو العلاج الطبيعي لدينا حالتك ويناقشون أهدافك ويضعون خارطة طريق مخصصة للتعافي.",
+                        "شد العمود الفقري لعلاج الانزلاق الغضروفي وتخفيف ضغط الأعصاب وآلام الظهر.",
+                    category: "manual",
+                },
+                {
+                    title: "التأهيل الرياضي",
+                    description:
+                        "برامج تعافي رياضية شاملة لإعادة الرياضيين إلى أعلى مستويات الأداء بأمان.",
+                    category: "rehabilitation",
+                },
+                {
+                    title: "تأهيل ما بعد العمليات",
+                    description:
+                        "برامج تمارين مخصصة للمساعدة في التعافي بعد الجراحة واستعادة القوة والحركة.",
+                    category: "rehabilitation",
+                },
+                {
+                    title: "العلاج الطبيعي للأطفال",
+                    description:
+                        "علاج لطيف ومتخصص للأطفال لدعم مراحل النمو واضطرابات الحركة.",
+                    category: "rehabilitation",
+                },
+                {
+                    title: "الإبر الجافة والوخز بالإبر",
+                    description:
+                        "تقنيات وخز دقيقة لتحرير توتر العضلات ونقاط الزناد وتعزيز التعافي الطبيعي.",
+                    category: "manual",
                 },
             ],
+            categories: {
+                all: "الكل",
+                technology: "التكنولوجيا",
+                manual: "العلاج اليدوي",
+                rehabilitation: "التأهيل",
+            },
         },
         location: {
             label: "موقعنا",
@@ -181,10 +253,12 @@ export const translations = {
             addressText: "شارع الزبير بن العوام، عمّان، الأردن",
             contactTitle: "التواصل",
             hoursTitle: "ساعات العمل",
-            weekdays: "السبت – الخميس",
-            weekdaysTime: "٩:٠٠ ص – ٨:٠٠ م",
+            weekdays: "السبت – الأربعاء",
+            weekdaysTime: "١٠:٠٠ ص – ٧:٠٠ م",
+            thursday: "الخميس",
+            thursdayTime: "١٠:٠٠ ص – ٣:٠٠ م",
             friday: "الجمعة",
-            fridayClosed: "مغلق",
+            fridayTime: "١٠:٠٠ ص – ٧:٠٠ م",
         },
         contact: {
             label: "تواصل معنا",
@@ -195,9 +269,9 @@ export const translations = {
             call: "اتصل الآن",
         },
         staff: {
-            label: "فريقنا",
-            title: "تعرّف على خبرائنا",
-            subtitle: "فريقنا المتخصص من المحترفين المعتمدين هنا لإرشادك خلال رحلة التعافي.",
+            label: "خبيرنا",
+            title: "تعرّف على رئيس الأخصائيين",
+            subtitle: "بقيادة أخصائي معتمد ملتزم بإرشادك خلال رحلة التعافي.",
         },
         footer: {
             description:
@@ -218,6 +292,14 @@ export type Language = "en" | "ar";
 interface ServiceItem {
     title: string;
     description: string;
+    category: string;
+}
+
+interface ServiceCategories {
+    all: string;
+    technology: string;
+    manual: string;
+    rehabilitation: string;
 }
 
 export interface Translations {
@@ -256,6 +338,7 @@ export interface Translations {
         title: string;
         subtitle: string;
         items: ServiceItem[];
+        categories: ServiceCategories;
     };
     location: {
         label: string;
@@ -267,8 +350,10 @@ export interface Translations {
         hoursTitle: string;
         weekdays: string;
         weekdaysTime: string;
+        thursday: string;
+        thursdayTime: string;
         friday: string;
-        fridayClosed: string;
+        fridayTime: string;
     };
     contact: {
         label: string;

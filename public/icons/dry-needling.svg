@@ -1,0 +1,25 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 80 80" fill="none">
+  <!-- Main needle -->
+  <line x1="40" y1="8" x2="40" y2="52" stroke="#4CAF93" stroke-width="2.5" stroke-linecap="round"/>
+  <!-- Needle head -->
+  <rect x="36" y="6" width="8" height="6" rx="2" fill="#4CAF93"/>
+  <!-- Needle tip (angled) -->
+  <polygon points="39,52 41,52 40,58" fill="#3D9B83"/>
+  <!-- Second needle -->
+  <line x1="28" y1="14" x2="28" y2="48" stroke="#4CAF93" stroke-width="2" stroke-linecap="round" opacity="0.6"/>
+  <rect x="25" y="12" width="6" height="5" rx="1.5" fill="#4CAF93" opacity="0.6"/>
+  <polygon points="27,48 29,48 28,53" fill="#3D9B83" opacity="0.6"/>
+  <!-- Third needle -->
+  <line x1="52" y1="16" x2="52" y2="46" stroke="#4CAF93" stroke-width="2" stroke-linecap="round" opacity="0.6"/>
+  <rect x="49" y="14" width="6" height="5" rx="1.5" fill="#4CAF93" opacity="0.6"/>
+  <polygon points="51,46 53,46 52,51" fill="#3D9B83" opacity="0.6"/>
+  <!-- Target point circles (trigger points) -->
+  <circle cx="40" cy="62" r="5" fill="#4CAF93" opacity="0.15"/>
+  <circle cx="40" cy="62" r="3" fill="#4CAF93" opacity="0.25"/>
+  <circle cx="28" cy="58" r="3" fill="#4CAF93" opacity="0.12"/>
+  <circle cx="52" cy="56" r="3" fill="#4CAF93" opacity="0.12"/>
+  <!-- Muscle fiber lines -->
+  <line x1="18" y1="62" x2="62" y2="62" stroke="#4CAF93" stroke-width="1.5" opacity="0.2"/>
+  <line x1="16" y1="66" x2="64" y2="66" stroke="#4CAF93" stroke-width="1.5" opacity="0.15"/>
+  <line x1="18" y1="70" x2="62" y2="70" stroke="#4CAF93" stroke-width="1.5" opacity="0.1"/>
+</svg>

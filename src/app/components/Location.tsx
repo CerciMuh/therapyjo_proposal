@@ -105,14 +105,25 @@ export default function Location() {
                                 </span>
                             </div>
                             <div className="location-hours-item">
+                                <span>{t.location.thursday}</span>
+                                <span
+                                    style={{
+                                        fontWeight: 600,
+                                        color: "var(--text-primary)",
+                                    }}
+                                >
+                                    {t.location.thursdayTime}
+                                </span>
+                            </div>
+                            <div className="location-hours-item">
                                 <span>{t.location.friday}</span>
                                 <span
                                     style={{
                                         fontWeight: 600,
-                                        color: "var(--text-muted)",
+                                        color: "var(--text-primary)",
                                     }}
                                 >
-                                    {t.location.fridayClosed}
+                                    {t.location.fridayTime}
                                 </span>
                             </div>
                         </div>

@@ -3,65 +3,6 @@
 import Image from "next/image";
 import { useLanguage } from "../i18n/LanguageContext";
 
-const staffMembers = [
-    {
-        nameEn: "Noor Hamami",
-        nameAr: "نور حمامي",
-        roleEn: "Head Physiotherapist",
-        roleAr: "رئيس قسم العلاج الطبيعي",
-        image: "/noor_hamami_head_doctor.jpg",
-        isLead: true,
-    },
-    {
-        nameEn: "Noor Hamami",
-        nameAr: "نور حمامي",
-        roleEn: "Sports Physiotherapist",
-        roleAr: "أخصائي علاج طبيعي رياضي",
-        image: "/noor_hamami_head_doctor.jpg",
-        isLead: false,
-    },
-    {
-        nameEn: "Noor Hamami",
-        nameAr: "نور حمامي",
-        roleEn: "Rehabilitation Specialist",
-        roleAr: "أخصائية إعادة تأهيل",
-        image: "/noor_hamami_head_doctor.jpg",
-        isLead: false,
-    },
-    {
-        nameEn: "Noor Hamami",
-        nameAr: "نور حمامي",
-        roleEn: "Manual Therapist",
-        roleAr: "أخصائي علاج يدوي",
-        image: "/noor_hamami_head_doctor.jpg",
-        isLead: false,
-    },
-    {
-        nameEn: "Noor Hamami",
-        nameAr: "نور حمامي",
-        roleEn: "Cupping Specialist",
-        roleAr: "أخصائية حجامة",
-        image: "/noor_hamami_head_doctor.jpg",
-        isLead: false,
-    },
-    {
-        nameEn: "Noor Hamami",
-        nameAr: "نور حمامي",
-        roleEn: "Physiotherapy Assistant",
-        roleAr: "مساعد علاج طبيعي",
-        image: "/noor_hamami_head_doctor.jpg",
-        isLead: false,
-    },
-    {
-        nameEn: "Noor Hamami",
-        nameAr: "نور حمامي",
-        roleEn: "Wellness Coordinator",
-        roleAr: "منسقة العافية",
-        image: "/noor_hamami_head_doctor.jpg",
-        isLead: false,
-    },
-];
-
 export default function Staff() {
     const { t, lang } = useLanguage();
 
@@ -76,28 +17,23 @@ export default function Staff() {
                     <p className="section-subtitle">{t.staff.subtitle}</p>
                 </div>
 
-                <div className="staff-grid">
-                    {staffMembers.map((member, index) => (
-                        <div
-                            key={index}
-                            className={`staff-card gsap-reveal ${member.isLead ? "staff-card-lead" : ""}`}
-                        >
-                            <div className="staff-card-image">
-                                <Image
-                                    src={member.image}
-                                    alt={lang === "en" ? member.nameEn : member.nameAr}
-                                    fill
-                                    sizes="(max-width: 768px) 50vw, 200px"
-                                    style={{ objectFit: "cover" }}
-                                    loading="lazy"
-                                />
-                            </div>
-                            <div className="staff-card-info">
-                                <h3>{lang === "en" ? member.nameEn : member.nameAr}</h3>
-                                <p>{lang === "en" ? member.roleEn : member.roleAr}</p>
-                            </div>
+                <div className="staff-solo gsap-reveal">
+                    <div className="staff-solo-card">
+                        <div className="staff-solo-image">
+                            <Image
+                                src="/noor_hamami_head_doctor.jpg"
+                                alt={lang === "en" ? "Noor Hamami" : "نور حمامي"}
+                                fill
+                                sizes="(max-width: 768px) 80vw, 320px"
+                                style={{ objectFit: "cover" }}
+                                loading="lazy"
+                            />
                         </div>
-                    ))}
+                        <div className="staff-solo-info">
+                            <h3>{lang === "en" ? "Noor Hamami" : "نور حمامي"}</h3>
+                            <p>{lang === "en" ? "Head Specialist" : "رئيس الأخصائيين"}</p>
+                        </div>
+                    </div>
                 </div>
             </div>
         </section>
