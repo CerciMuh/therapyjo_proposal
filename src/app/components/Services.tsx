@@ -48,6 +48,13 @@ export default function Services() {
         const section = sectionRef.current;
         if (!section) return;
 
+        // Disable pin on mobile — cards just stack normally
+        const isMobile = window.innerWidth < 768;
+        if (isMobile) {
+            setActiveSlide(-1); // show all slides on mobile
+            return;
+        }
+
         const ctx = gsap.context(() => {
             ScrollTrigger.create({
                 trigger: section,
@@ -90,11 +97,13 @@ export default function Services() {
                     {slides.map((pair, slideIdx) => (
                         <div
                             key={slideIdx}
-                            className={`svc-slide ${slideIdx === activeSlide
-                                ? "active"
-                                : slideIdx < activeSlide
-                                    ? "exited"
-                                    : "waiting"
+                            className={`svc-slide ${activeSlide === -1
+                                    ? "active"
+                                    : slideIdx === activeSlide
+                                        ? "active"
+                                        : slideIdx < activeSlide
+                                            ? "exited"
+                                            : "waiting"
                                 }`}
                         >
                             {pair.map((service, rowIdx) => {
